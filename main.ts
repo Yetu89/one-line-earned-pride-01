@@ -1,7 +1,7 @@
 // One Line of Earned Pride — make.fun bounty entry.
 // Writes one line of quiet, earned pride (max 240 characters) to
 // /output/entry.txt (or $OUTPUT_DIR/entry.txt for local testing).
-// Node.js standard library only; no dependencies.
+// Node.js standard library only; no dependencies, no network, no secrets.
 
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
