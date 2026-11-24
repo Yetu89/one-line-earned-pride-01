@@ -17,6 +17,10 @@ const TEXT =
 // wasted characters rather than trimmed away silently.
 const MAX_CHARS = 240;
 
+// Validation mirrors the gate exactly so a local pass means a gate pass:
+// length is counted per code point (not UTF-16 units, so emoji count once),
+// a single line is enforced, and leading/trailing whitespace is rejected
+// instead of trimmed, so the text on disk is byte-for-byte the text scored.
 function validate(text: string): void {
   if (text.length === 0) {
     throw new Error("entry must not be empty");
